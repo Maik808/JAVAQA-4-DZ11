@@ -1,12 +1,14 @@
-package ru.netology.domain;
+package ru.netology.domain.manager;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.domain.repozitory.AfishaRepository;
+import ru.netology.domain.Film;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BillboardManagerTest {
-    BillboardManager manager = new BillboardManager();
+class AfishaManagerTest {
+    AfishaRepository repository = new AfishaRepository();
+    AfishaManager manager = new AfishaManager(repository);
     Film[] expected = {new Film(10, "Serf", "comedy"),
             new Film(9, "Good luck gentlemen", "comedy"),
             new Film(8, "Diamond hand", "comedy"),
@@ -61,5 +63,5 @@ class BillboardManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-}
 
+}
