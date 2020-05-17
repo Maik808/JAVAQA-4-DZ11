@@ -29,7 +29,6 @@ class AfishaRepositoryTest {
                 new Film(7, "Howl's moving castle", "fantastic"),
                 new Film(8, "Diamond hand", "comedy"),
                 new Film(9, "Good luck gentlemen", "comedy"),
-                new Film(10, "Serf", "comedy"),
                 new Film(30, "Dunkerk", "action")
         };
         assertArrayEquals(expected, actual);
@@ -50,7 +49,6 @@ class AfishaRepositoryTest {
                 new Film(7, "Howl's moving castle", "fantastic"),
                 new Film(8, "Diamond hand", "comedy"),
                 new Film(9, "Good luck gentlemen", "comedy"),
-                new Film(10, "Serf", "comedy"),
                 new Film(30, "Dunkerk", "action"),
                 new Film(32, "Terminator2", "action")
         };
@@ -84,7 +82,6 @@ class AfishaRepositoryTest {
                 new Film(7, "Howl's moving castle", "fantastic"),
                 new Film(8, "Diamond hand", "comedy"),
                 new Film(9, "Good luck gentlemen", "comedy"),
-                new Film(10, "Serf", "comedy"),
                 new Film(30, "Dunkerk", "action")
         };
         assertArrayEquals(expected,actual);

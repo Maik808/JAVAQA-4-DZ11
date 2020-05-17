@@ -11,8 +11,7 @@ public class AfishaRepository {
             new Film(6, "Avatar", "fantastic"),
             new Film(7, "Howl's moving castle", "fantastic"),
             new Film(8, "Diamond hand", "comedy"),
-            new Film(9, "Good luck gentlemen", "comedy"),
-            new Film(10, "Serf", "comedy")
+            new Film(9, "Good luck gentlemen", "comedy")
     };
 
     public Film[] findAll() {
