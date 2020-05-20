@@ -5,31 +5,32 @@ import ru.netology.domain.repozitory.AfishaRepository;
 
 public class AfishaManager {
     private AfishaRepository repository;
+    private int howManyFilmsToShow;
+    private int show = 10;
 
-    public AfishaManager(AfishaRepository repository) {
+    public AfishaManager(AfishaRepository repository,int howManyFilmsToShow) {
         this.repository = repository;
+
+        if (howManyFilmsToShow > 0 & howManyFilmsToShow < 10) {
+            show = howManyFilmsToShow;
+        }
+        Film[] films = repository.findAll();
+        int filmsLength = films.length;
+        if ( filmsLength< show ){
+            show = filmsLength;
+        }
     }
 
     public void addFilm(Film film) {
        repository.save(film);
     }
 
-    public Film[] getLastAdded(int howManyFilmsToShow) {
+
+    public Film[] getLastAdded() {
         Film[] films = repository.findAll();
         int filmsLength = films.length;
-        int showMax = 10;
-        if (howManyFilmsToShow <= 0 || howManyFilmsToShow > showMax) {
-            howManyFilmsToShow = showMax;
-        }
-        if (showMax > filmsLength) {
-            showMax = filmsLength;
-        }
-        if (howManyFilmsToShow < showMax) {
-            showMax = howManyFilmsToShow;
-        } else {
-            showMax = filmsLength;
-        }
-        Film[] customFilm = new Film[showMax];
+
+        Film[] customFilm = new Film[show];
         for (int current = 0; current < customFilm.length; current++) {
             int result = filmsLength - current - 1;
             customFilm[current] = films[result];
