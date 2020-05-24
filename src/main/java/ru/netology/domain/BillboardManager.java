@@ -1,25 +1,20 @@
 package ru.netology.domain;
 
 public class BillboardManager {
-    Film[] films = {new Film(1, "Call of the ancestors", "action"),
-            new Film(2, "Forward", "action"),
-            new Film(3, "Green mile", "drama"),
-            new Film(4, "Capernaum", "drama"),
-            new Film(5, "Beginning", "fantastic"),
-            new Film(6, "Avatar", "fantastic"),
-            new Film(7, "Howl's moving castle", "fantastic"),
-            new Film(8, "Diamond hand", "comedy"),
-            new Film(9, "Good luck gentlemen", "comedy"),
-            new Film(10, "Serf", "comedy")};
+    Film[] films = new Film[0];
 
-    private int howManyFilmsToShow;
     int show = 10;
+    BillboardManager(){};
+
     public BillboardManager(int howManyFilmsToShow) {
 
-        if (howManyFilmsToShow > 0 & howManyFilmsToShow < 10) {
+        if (howManyFilmsToShow <= 0) {
+            howManyFilmsToShow = show;
+        } else {
             show = howManyFilmsToShow;
         }
     }
+
 
 
     public void addFilm(Film film) {
