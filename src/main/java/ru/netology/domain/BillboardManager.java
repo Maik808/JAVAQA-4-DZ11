@@ -4,13 +4,13 @@ public class BillboardManager {
     Film[] films = new Film[0];
 
     int show = 10;
-    BillboardManager(){};
+
+    BillboardManager() {
+    }
 
     public BillboardManager(int howManyFilmsToShow) {
 
-        if (howManyFilmsToShow <= 0) {
-            howManyFilmsToShow = show;
-        } else {
+        if (howManyFilmsToShow > 0) {
             show = howManyFilmsToShow;
         }
     }
@@ -28,6 +28,9 @@ public class BillboardManager {
 
     public Film[] getLastAdded() {
         int filmsLength = films.length;
+        if (filmsLength < show){
+            show = filmsLength;
+        }
         Film[] customFilm = new Film[show];
         for (int current = 0; current < customFilm.length; current++) {
             int result = filmsLength - current - 1;
