@@ -17,10 +17,12 @@ class AfishaManagerMockitoTest {
     @Mock
     private AfishaRepository repository;
     @InjectMocks
-    private AfishaManager manager;
-    Film first = new Film(111, "The Irishman", "action");
-    Film second = new Film(122, "Gisaengchung", "thriller");
-    Film third = new Film(133, "Ford v Ferrari", "drama");
+    AfishaManager manager =new AfishaManager();
+
+   // private AfishaManager manager;
+    private Film first = new Film(111, "The Irishman", "action");
+    private Film second = new Film(122, "Gisaengchung", "thriller");
+    private Film third = new Film(133, "Ford v Ferrari", "drama");
 
     @Test
     void shouldAddFilmWithMock() {

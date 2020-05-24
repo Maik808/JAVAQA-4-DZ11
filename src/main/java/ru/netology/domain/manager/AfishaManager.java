@@ -5,8 +5,8 @@ import ru.netology.domain.repozitory.AfishaRepository;
 
 public class AfishaManager {
     private AfishaRepository repository;
-    private int howManyFilmsToShow;
     private int show = 10;
+    AfishaManager (){}
 
     public AfishaManager(AfishaRepository repository,int howManyFilmsToShow) {
         this.repository = repository;
